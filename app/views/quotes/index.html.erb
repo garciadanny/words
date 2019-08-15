@@ -1,0 +1,10 @@
+<h2>Quotes Index</h2>
+<%= link_to "Create a new quote", new_quote_path %>
+
+<h3>Quotes List</h3>
+<% @quotes.each do |quote| %>
+  <div>
+    <%= quote.text.truncate(20) %>
+    <div><%= link_to "Open", quote_path(quote) %></div>
+  </div>
+<% end %>
