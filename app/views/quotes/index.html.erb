@@ -4,7 +4,7 @@
 <h3>Quotes List</h3>
 <% @quotes.each do |quote| %>
   <div>
-    <%= quote.text.truncate(20) %>
+    <%= quote.text.truncate(50) %>
     <div><%= link_to "Open", quote_path(quote) %></div>
   </div>
 <% end %>
