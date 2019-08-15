@@ -10,8 +10,11 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(quote_params)
 
-    if @quote.save!
-      redirect_to root_path
+    if @quote.save
+      redirect_to quote_path(@quote)
+    else
+      flash[:danger] = @quote.errors.full_messages.join(". ")
+      render :new
     end
   end
 
