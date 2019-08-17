@@ -7,7 +7,11 @@
 
 <div>
   <p>Source:</p>
-  <%= @quote.source %>
+  <% if @quote.source_is_url? %>
+    <%= link_to @quote.source, @quote.source, id: "source-link" %>
+  <% else %>
+    <%= @quote.source %>
+  <% end %>
 </div>
 
 <div>
