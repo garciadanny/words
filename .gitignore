@@ -10,6 +10,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+!/tmp/pids/.keep
+/tmp/pids/*
 !/log/.keep
 !/tmp/.keep
 
