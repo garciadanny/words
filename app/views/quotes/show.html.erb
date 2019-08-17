@@ -1,6 +1,10 @@
 <h2>Quote</h2>
 
 <div>
+  <%= link_to "Back", session[:return_to], class: "btn btn-info" %>
+</div>
+
+<div>
   <p>Words:</p>
   <%= simple_format(@quote.text) %>
 </div>
