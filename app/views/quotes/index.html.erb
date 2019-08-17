@@ -3,8 +3,13 @@
 
 <h3>Quotes List</h3>
 <% @quotes.each do |quote| %>
-  <div>
+  <div class="quote-summary">
     <%= quote.text.truncate(50) %>
-    <div><%= link_to "Open", quote_path(quote) %></div>
+    <div><%= link_to "Open", quote_path(quote), class: "btn btn-info" %></div>
   </div>
 <% end %>
+
+<div>
+  <%= link_to_prev_page @quotes, 'Previous Page', class: "btn btn-secondary" %>
+  <%= link_to_next_page @quotes, 'Next Page', class: "btn btn-secondary" %>
+</div>

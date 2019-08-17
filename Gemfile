@@ -20,6 +20,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.9.1'
+
+# Pagination Support
+gem 'kaminari', '~> 1.1.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -45,6 +48,8 @@ group :development, :test do
   gem 'capybara', '~> 3.28'
   gem 'launchy'
   gem 'factory_bot_rails', '~> 5.0.2'
+  gem 'faker'
+  gem 'pry'
 end
 
 group :development do
