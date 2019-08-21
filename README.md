@@ -1,4 +1,4 @@
-# Words
+# Words [![Maintainability][grade-badge]][grade] [![Build Status][ci-badge]][ci]
 
 Words is an app that allows you save inspirational quotes
 (or any piece of text) to a centralized location to access whenever you need a
@@ -44,3 +44,8 @@ To run the test suite, simply run:
 ```
 bin/rspec
 ```
+
+[grade-badge]: https://api.codeclimate.com/v1/badges/b2ee05982a0e785bbe79/maintainability
+[grade]: https://codeclimate.com/github/garciadanny/words/maintainability
+[ci-badge]: https://travis-ci.org/garciadanny/words.svg?branch=master
+[ci]: https://travis-ci.org/garciadanny/words
