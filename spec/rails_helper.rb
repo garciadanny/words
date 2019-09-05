@@ -82,7 +82,8 @@ RSpec.configure do |config|
   end
   # END: DatabaseCleaner Configuration for the Teardown steps of tests
 
-
+# FactoryBot config
+config.include FactoryBot::Syntax::Methods
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and

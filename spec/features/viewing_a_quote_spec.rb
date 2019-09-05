@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "Viewing a quote page" do
   scenario "When a source is a URL" do
-    quote = create_quote(text: "inspired!", source: "http://example.com")
+    quote = create(:quote, text: "inspired!", source: "http://example.com")
 
     visit quote_path(quote)
 
@@ -10,15 +10,11 @@ feature "Viewing a quote page" do
   end
 
   scenario "When a source isn't a URL" do
-    quote = create_quote(text: "inspired!", source: "IRL")
+    quote = create(:quote, text: "inspired!", source: "IRL")
 
     visit quote_path(quote)
 
     expect(page).not_to have_link("source-link")
     expect(page).to have_content("IRL")
-  end
-
-  def create_quote(text:, source: nil, author: nil)
-    Quote.create(text: text, source: source, author: author)
   end
 end

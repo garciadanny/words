@@ -26,13 +26,7 @@ feature "Views the quotes home page" do
   end
 
   def create_quotes(count:)
-    count.times do |n|
-      create_quote(text: "inspired#{n}!")
-    end
-  end
-
-  def create_quote(text:, source: nil, author: nil)
-    Quote.create(text: text, source: source, author: author)
+    create_list(:quote, count, :with_text)
   end
 
   def have_number_of_quotes(count)
