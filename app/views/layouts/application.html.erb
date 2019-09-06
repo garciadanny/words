@@ -12,6 +12,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <nav class="navbar navbar-light bg-light">
+    <%= link_to quotes_path, class: "navbar-brand" do %>
+      <%= image_tag("svg/edit.svg", size: 30) %>
+      Words
+    <% end %>
+  </nav>
   <body>
     <div class="container">
       <%= render "layouts/flash_alert" %>
