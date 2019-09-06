@@ -1,7 +1,10 @@
 <h2>Quote</h2>
 
 <div>
-  <%= link_to "Back", session[:return_to], class: "btn btn-info" %>
+  <% return_to = params[:return_to] %>
+  <% if return_to %>
+    <%= link_to "Back", return_to, class: "btn btn-info" %>
+  <% end %>
 </div>
 
 <div>

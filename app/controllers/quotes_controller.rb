@@ -23,7 +23,6 @@ class QuotesController < ApplicationController
   end
 
   def show
-    session[:return_to] ||= request.referer
     @quote = Quote.find(params[:id])
   end
 

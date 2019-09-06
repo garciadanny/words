@@ -5,7 +5,9 @@
 <% @quotes.each do |quote| %>
   <div class="quote-summary">
     <%= quote.text.truncate(50) %>
-    <div><%= link_to "Open", quote_path(quote), class: "btn btn-info" %></div>
+    <div>
+      <%= link_to "Open", quote_path(quote, return_to: request.url), class: "btn btn-info open" %>
+    </div>
   </div>
 <% end %>
 
