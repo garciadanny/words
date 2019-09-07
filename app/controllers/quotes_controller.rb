@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-  before_action :find_quote, only: [:show, :edit, :update]
+  before_action :find_quote, only: [:show, :edit, :update, :destroy]
 
   def index
     @quotes = Quote
@@ -36,6 +36,15 @@ class QuotesController < ApplicationController
     else
       flash[:danger] = @quote.errors.full_messages.join(". ")
       render :edit
+    end
+  end
+
+  def destroy
+    if @quote.destroy!
+      redirect_to quotes_path
+    else
+      flash[:danger] = @quote.errors.full_messages.join(". ")
+      render :show
     end
   end
 
