@@ -1,17 +1,2 @@
 <h2>New Quote</h2>
-
-<%= form_for @quote do |f| %>
-  <div class="form-group">
-    <%= f.text_area :text, class: "form-control", size: "60x12", placeholder: "Enter Words Here..." %>
-  </div>
-
-  <div class="form-group">
-    <%= f.text_field :source, class: "form-control", placeholder: "Source..." %>
-  </div>
-
-  <div class="form-group">
-    <%= f.text_field :author, class: "form-control", placeholder: "Author..." %>
-  </div>
-
-  <%= f.submit "Create", class: "btn btn-primary" %>
-<% end %>
+<%= render "quote_form", locals: { submit_action: "Create" } %>
