@@ -8,6 +8,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <%= favicon_link_tag "favicon/apple-touch-icon.png", rel: "apple-touch-icon", type: "image/png" %>
+    <%= favicon_link_tag "favicon/favicon-32x32.png", type: "image/png" %>
+    <%= favicon_link_tag "favicon/favicon-16x16.png", type: "image/png" %>
+    <%= favicon_link_tag "favicon/site.webmanifest", rel: "manifest" %>
+    <%= favicon_link_tag "favicon/safari-pinned-tab.svg", rel: "mask-icon" %>
+    <meta name="theme-color" content="#ffffff">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
