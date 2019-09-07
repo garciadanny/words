@@ -7,9 +7,19 @@ feature "Editing an existing quote" do
    visit quote_path(quote)
    click_on "Edit"
    fill_in("quote_text", with: "edited text")
-   click_button("Update")
+   click_on("Update")
 
    expect(page).to have_current_path(quote_path(quote))
    expect(page).to have_content("edited text")
+  end
+
+  scenario "A user can choose not to edit the quote" do
+   quote = create(:quote, :with_text)
+
+   visit quote_path(quote)
+   click_on "Edit"
+   click_on("Cancel")
+
+   expect(page).to have_current_path(quote_path(quote))
   end
 end
