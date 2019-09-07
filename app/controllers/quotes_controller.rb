@@ -41,7 +41,8 @@ class QuotesController < ApplicationController
 
   def destroy
     if @quote.destroy!
-      redirect_to quotes_path
+      path = params[:return_to] || quotes_path
+      redirect_to path
     else
       flash[:danger] = @quote.errors.full_messages.join(". ")
       render :show
