@@ -1,2 +1,8 @@
 <h2>New Quote</h2>
-<%= render "quote_form", locals: { submit_action: "Create", cancel_path: quotes_path } %>
+<%=
+  render "quote_form",
+    locals: {
+    submit_action: "Create",
+    cancel_path: quotes_path
+  }
+%>

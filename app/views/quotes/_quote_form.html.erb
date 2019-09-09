@@ -11,6 +11,8 @@
     <%= f.text_field :author, class: "form-control", placeholder: "Author..." %>
   </div>
 
+  <%= hidden_field_tag "return_to", locals[:return_to] %>
+
   <%= f.submit locals[:submit_action], class: "btn btn-primary" %>
   <%= link_to "Cancel", locals[:cancel_path], class: "btn btn-info" %>
 <% end %>

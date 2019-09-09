@@ -32,7 +32,7 @@ class QuotesController < ApplicationController
 
   def update
     if @quote.update(quote_params)
-      redirect_to quote_path(@quote)
+      redirect_to quote_path(@quote, return_to: params[:return_to])
     else
       flash[:danger] = @quote.errors.full_messages.join(". ")
       render :edit

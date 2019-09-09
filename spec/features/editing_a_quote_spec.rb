@@ -9,7 +9,7 @@ feature "Editing an existing quote" do
    fill_in("quote_text", with: "edited text")
    click_on("Update")
 
-   expect(page).to have_current_path(quote_path(quote))
+   expect(page).to have_current_path(quote_path(quote), ignore_query: true)
    expect(page).to have_content("edited text")
   end
 
