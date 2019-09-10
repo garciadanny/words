@@ -1,14 +1,26 @@
-<%= link_to "Create a new quote", new_quote_path %>
+<span>
+  <%= link_to new_quote_path do %>
+    <i class="fas fa-pen-fancy fa-2x float-right pr-2"></i>
+  <% end %>
+</span>
 
-<h3>Quotes List</h3>
-<% @quotes.each do |quote| %>
-  <div class="quote-summary">
-    <%= quote.text.truncate(50) %>
-    <div>
-      <%= link_to "Open", quote_path(quote, return_to: request.url), class: "btn btn-info open" %>
+<div class="border-bottom">
+  <h3 class="text-center">Quotes</h3>
+</div>
+
+<div class="card-group">
+  <% @quotes.each do |quote| %>
+    <div class="quote-summary card rounded-0 border-0">
+      <div class="card-body">
+        <div><p class="card-text"><%= quote.text.truncate(100) %></div>
+      </div>
+
+     <div class="card-button">
+        <%= link_to "Open", quote_path(quote, return_to: request.url), class: "btn btn-info open d-block rounded-0" %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <div>
   <%= link_to_prev_page @quotes, 'Previous Page', class: "btn btn-secondary" %>

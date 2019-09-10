@@ -15,6 +15,9 @@
     <%= favicon_link_tag "favicon/safari-pinned-tab.svg", rel: "mask-icon" %>
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Font awesome icons -->
+    <script src="https://kit.fontawesome.com/4ddff9f81c.js"></script>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -26,7 +29,7 @@
     <% end %>
   </nav>
   <body>
-    <div class="container">
+    <div class="container px-0">
       <%= render "layouts/flash_alert" %>
       <%= yield %>
     </div>
