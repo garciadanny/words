@@ -8,16 +8,39 @@
   <h3 class="text-center">Quotes</h3>
 </div>
 
-<div class="card-group">
+<div class="card-deck">
   <% @quotes.each do |quote| %>
-    <div class="quote-summary card rounded-0 border-0">
-      <div class="card-body">
-        <div><p class="card-text"><%= quote.text.truncate(100) %></div>
-      </div>
+    <div class="quote-summary rounded-0 card">
 
-     <div class="card-button">
-        <%= link_to "Open", quote_path(quote, return_to: request.url), class: "btn btn-info open d-block rounded-0" %>
+      <div class="card-body">
+        <!--Start Card Body -->
+        <%= link_to quote_path(quote, return_to: request.url), class: "open" do %>
+          <div><p class="card-text"><%= quote.text.truncate(100) %></div>
+
+          <div id="quote-created-at" class="mt-2 mb-0">
+            <p class="card-text">
+              <small class="text-muted">
+                Created <%= QuoteDateHelper.display_humanized_quote_age(quote) %>
+              </small>
+            </p>
+          </div>
+        <% end %>
+
+        <ul class="card-button pl-0 mt-4 mb-0">
+          <li>
+            <%= link_to edit_quote_path(quote, return_to: request.url) do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
+          </li>
+
+          <li>
+            <%= link_to quote_path(quote, return_to: request.url), method: :delete, data: { confirm: "Are you sure?"  } do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          </li>
+        </ul>
       </div>
+      <!--End Card Body -->
     </div>
   <% end %>
 </div>

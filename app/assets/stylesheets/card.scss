@@ -1,0 +1,17 @@
+.card a {
+  text-decoration: none;
+  color: black;
+}
+
+.card :hover {
+  background-color: lightgray;
+  opacity: 1.00;
+}
+
+ul.card-button {
+  list-style-type: none;
+}
+
+ul.card-button li {
+  display: inline-block;
+}
