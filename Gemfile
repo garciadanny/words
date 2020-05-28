@@ -22,7 +22,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.9.1'
 
 # Pagination Support
-gem 'kaminari', '~> 1.1.1'
+gem 'kaminari', '~> 1.2.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
